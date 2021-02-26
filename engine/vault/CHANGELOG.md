@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.3.0]
+
+-   Refactor the communication actor, enable using a relay peer, and integrate communication as feature into the stronghold interface. 
+    Remove unecessary Option/ Result wraps in `random` and `iota-stronghold`.
+    Rename stronghold-test-utils to stronghold-utils and added riker ask pattern to it.
+        - [9c7cba6](https://www.github.com/iotaledger/stronghold.rs/commit/9c7cba624e2a99f04a2d033b8673f8a4b8735f0b) Feat/integrate comms ([#130](https://www.github.com/iotaledger/stronghold.rs/pull/130)) on 2021-02-26
+-   Address two new clippy warnings: `needless_lifetimes` (addressed in the vault)
+    and `unnecessary_cast` (ignored in the runtime since they are necessary for
+    portability: `0 as libc::c_char` is not necessarily the same as `0_u8`).
+        - [1614243](https://www.github.com/iotaledger/stronghold.rs/commit/161424322af84bd4626aac5a3f96b0c529d7b39a) Add a changelog message on 2021-01-04
+
 ## [0.2.0]
 
 -   Added the initial client logic and integrated it with the Riker actor model. Change includes a Client/Cache actor, a Bucket actor, a Snapshot actor, and a keystore actor.  All of the Stronghold APIs are available.

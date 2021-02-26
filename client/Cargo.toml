@@ -1,6 +1,6 @@
 [package]
 name = "iota-stronghold"
-version = "0.2.0"
+version = "0.3.0"
 authors = [
   "tensorprogramming <tensordeveloper@gmail.com>",
   "Daniel Thompson-Yvetot <daniel.yvetot@iota.org>"
@@ -22,34 +22,32 @@ zeroize_derive = "1.0"
 anyhow = "1.0"
 thiserror = "1.0"
 futures = "0.3"
-riker = { version = "0.4", git ="https://github.com/elenaf9/riker", branch = "master" }
+riker = { version = "0.4", git = "https://github.com/elenaf9/riker", branch = "master" }
 
+  [dependencies.stronghold-engine]
+  path = "../engine"
+  version = "0.3"
 
-[dependencies.stronghold-engine]
-path = "../engine"
-version = "0.2"
+  [dependencies.stronghold-runtime]
+  path = "../runtime"
+  version = "0.2"
 
-[dependencies.stronghold-runtime]
-path = "../runtime"
-version = "0.2"
+  [dependencies.iota-crypto]
+  git = "https://github.com/iotaledger/crypto.rs"
+  rev = "09ff1a94d6a87838589ccf1b874cfa3283a00f26"
+  features = [ "random", "ed25519", "sha", "hmac", "bip39-en" ]
+  version = "*"
 
-[dependencies.iota-crypto]
-git = "https://github.com/iotaledger/crypto.rs"
-rev = "09ff1a94d6a87838589ccf1b874cfa3283a00f26"
-features = [ "random", "ed25519", "sha", "hmac", "bip39-en" ]
-version = "*"
-# Note: We are only adding a version so that we can publish to crates.io
+  [dependencies.stronghold-communication]
+  path = "../communication"
+  optional = true
 
-[dependencies.stronghold-communication]
-path = "../communication"
-optional = true
-
-[dependencies.stronghold-utils]
-path = "../utils"
-version = "0.1"
+  [dependencies.stronghold-utils]
+  path = "../utils"
+  version = "0.2"
 
 [features]
-communication = ["stronghold-communication"]
+communication = [ "stronghold-communication" ]
 
 [dev-dependencies]
 hex = "0.4.2"

@@ -1,6 +1,6 @@
 [package]
 name = "stronghold-engine"
-version = "0.2.0"
+version = "0.3.0"
 authors = [ "tensorprogramming <tensordeveloper@gmail.com>" ]
 edition = "2018"
 license = "Apache-2.0"
@@ -20,7 +20,7 @@ version = "0.2"
 
 [dependencies.vault]
 path = "vault"
-version = "0.2"
+version = "0.3"
 
 [dependencies.primitives]
 path = "primitives"
@@ -32,7 +32,7 @@ version = "0.2"
 
 [dependencies.snapshot]
 path = "snapshot"
-version = "0.2"
+version = "0.3"
 
 [dependencies.store]
 path = "store"
